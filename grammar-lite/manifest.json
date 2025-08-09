@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Gramma-Lite",
+  "description": "Quick, private grammar and spell checking (LanguageTool-powered).",
+  "version": "1.0.0",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": { "default_popup": "popup.html" },
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["https://api.languagetool.org/*"],
+  "options_page": "options.html",
+  "background": { "service_worker": "service_worker.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+

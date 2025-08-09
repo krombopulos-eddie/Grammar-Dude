@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Gramma-Lite Options</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 16px; max-width: 640px; }
+    label { display:block; margin: 12px 0 4px; }
+    input { width: 100%; padding: 6px; }
+    .hint { color:#555; font-size:12px; }
+  </style>
+</head>
+<body>
+  <h2>Options</h2>
+  <label>LanguageTool Server URL</label>
+  <input id="serverUrl" placeholder="https://api.languagetool.org/v2/check" />
+  <div class="hint">Use the default free server or your own (self-hosted) for higher limits and privacy.</div>
+
+  <label style="margin-top:12px;">API Key (optional)</label>
+  <input id="apiKey" placeholder="Leave empty for public server" />
+
+  <label style="margin-top:12px;">Request Timeout (ms)</label>
+  <input id="timeoutMs" type="number" min="1000" value="10000" />
+
+  <p><button id="saveBtn">Save</button> <span id="status" class="hint"></span></p>
+
+  <script src="options.js"></script>
+</body>
+</html>
+
